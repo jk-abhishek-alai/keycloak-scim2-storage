@@ -132,7 +132,7 @@ public class ScimClient2 {
         }
 
         user.setSchemas(ImmutableSet.of(ScimConstant.URN_USER));
-        user.setExternalId(userModel.getId());
+        user.setExternalId(userModel.getId().replace(":", "-"));
         user.setActive(userModel.isEnabled());
 
         List<UserRecord.UserGroup> groups = new ArrayList<>();
@@ -140,7 +140,7 @@ public class ScimClient2 {
             try {
                 createGroup(groupModel);
             } catch (ScimException e) {
-                log.error("", e);
+                log.error(e.getStackTrace());
             }
 
             UserRecord.UserGroup grp = new UserRecord.UserGroup();
@@ -287,7 +287,6 @@ public class ScimClient2 {
             log.info("User user does not exist in the SCIM2 provider " + userModel.getUsername());
             return null;
         }
-
         return scimService.readUser(id);
     }
 

@@ -25,7 +25,7 @@
         <commons.coll.version>4.4</commons.coll.version>
         <commons.io.version>2.7</commons.io.version>
 
-        <jackson.version>2.11.2</jackson.version>
+        <jackson.version>2.13.3</jackson.version>
         <lombok.version>1.18.12</lombok.version>
         <okhttp.version>4.9.0</okhttp.version>
     </properties>
@@ -126,7 +126,7 @@
         <dependency>
             <groupId>com.github.suvera.scim2-sdk</groupId>
             <artifactId>scim2-sdk-client</artifactId>
-            <version>4094f3b</version>
+            <version>90c7b0d</version>
         </dependency>
 
     </dependencies>

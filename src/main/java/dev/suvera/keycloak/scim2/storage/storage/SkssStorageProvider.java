@@ -136,7 +136,7 @@ public class SkssStorageProvider implements UserStorageProvider,
 
     @Override
     public boolean updateCredential(RealmModel realmModel, UserModel userModel, CredentialInput credentialInput) {
-        //noinspection deprecation
+        // noinspection deprecation
         if (credentialInput.getType().equals(CredentialModel.PASSWORD))
             throw new ReadOnlyException("user is read only for this update");
 
@@ -163,8 +163,7 @@ public class SkssStorageProvider implements UserStorageProvider,
                 keycloakSession,
                 realm,
                 componentModel,
-                localModel
-        ));
+                localModel));
     }
 
     private SkssUserModel getUser(SkssUserModel skssModel) {
@@ -208,7 +207,6 @@ public class SkssStorageProvider implements UserStorageProvider,
                 keycloakSession,
                 realm,
                 componentModel,
-                localModel
-        ));
+                localModel));
     }
 }
